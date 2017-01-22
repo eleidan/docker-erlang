@@ -1,0 +1,16 @@
+version: '2'
+services:
+  core:
+    build: .
+    # TODO: replace the line below
+    image: erlang_app
+    volumes:
+      - .:/home/phantom/app
+      - .docker/.bash_history:/home/phantom/.bash_history
+
+  dev:
+    extends:
+      service: core
+    environment:
+      - SERVICE_NAME=erlang_app.dev
+    command: [bash]
