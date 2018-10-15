@@ -58,5 +58,5 @@ RUN set -xe \
 ### Needed for the docker-init.sh script
 COPY --chown=phantom:phantom recipes $HOME/recipes
 
-ENV SERVICE_NAME="Erlang/OTP ${OTP_VERSION} on Ubuntu 16.04" \
+ENV SERVICE_NAME="Erlang/OTP ${OTP_VERSION} based on Ubuntu 16.04" \
     USER=${CONTAINER_USER}
