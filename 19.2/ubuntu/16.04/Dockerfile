@@ -8,6 +8,8 @@ LABEL maintainer="Oleg Kulyk" \
 
 WORKDIR $HOME/app
 
+USER root
+
 COPY docker-init.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-init.sh
 
@@ -20,7 +22,7 @@ RUN set -xe \
         libwxbase3.0-0v5 \
         libwxgtk3.0-0v5' \
     && apt-get install -y --no-install-recommends $runtimeDeps \
-    && wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_${OTP_VERSION}-1~ubuntu~xenial_amd64.deb  -O /tmp/erlang.deb \
+    && wget https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_${OTP_VERSION}-1~ubuntu~xenial_amd64.deb -O /tmp/erlang.deb \
     && dpkg -i /tmp/erlang.deb \
     && rm /tmp/erlang.deb \
     && rm -rf /var/lib/apt/lists/*
