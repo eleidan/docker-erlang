@@ -43,10 +43,10 @@ RUN set -xe \
     && rm -rf /usr/src/rebar-src
 
 # rebar3
-ARG REBAR3_VERSION="3.6.2"
+ARG REBAR3_VERSION="3.12.0"
 RUN set -xe \
     && REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" \
-    && REBAR3_DOWNLOAD_SHA256="7f358170025b54301bce9a10ec7ad07d4e88a80eaa7b977b73b32b45ea0b626e" \
+    && REBAR3_DOWNLOAD_SHA256="8ac45498f03e293bc6342ec431888f9a81a4fb9e1177a69965238d127c00a79e" \
     && mkdir -p /usr/src/rebar3-src \
     && curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" \
     && echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - \
