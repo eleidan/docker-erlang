@@ -1,0 +1,5 @@
+services:
+  erlang:
+    image: eleidan/erlang:27.0-ubuntu-24.04
+    build:
+      context: ./27.0/ubuntu/24.04/
